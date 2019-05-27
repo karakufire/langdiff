@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "run-help": "node index.js --help",
-    "build:": "npm run build-tsc && npm run build-pkg",
-    "build-tsc": "node tsc",
+    "build": "npm run build-tsc && npm run build-pkg",
+    "build-tsc": "./node_modules/.bin/tsc",
     "build-pkg": "./node_modules/.bin/pkg ./index.js -o ./dist/langdiff"
   },
   "keywords": [],
