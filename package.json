@@ -4,9 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run-help" : "node index.js --help"
+    "run-help": "node index.js --help",
+    "build:": "npm run build-tsc && npm run build-pkg",
+    "build-tsc": "node tsc",
+    "build-pkg": "./node_modules/.bin/pkg ./index.js -o ./dist/langdiff"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.0.2",
+    "pkg": "^4.4.0",
+    "typescript": "^3.4.5"
+  }
 }

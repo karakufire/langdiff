@@ -3,3 +3,4 @@ test/
 *.map
 test.*
 .vscode/
+dist/
