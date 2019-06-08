@@ -76,7 +76,7 @@ let res = [...new Set([...f1.map(e => e.contents.name), ...f2.map(e => e.content
         else if (l1b < 0) return -1;
         else return l1a - l1b;
     }).map(e => {
-        let ret = `${e.key}\t${e.v1}\t${e.l1 > -1 ? e.l1 : null}\t${e.v2}\t${e.l2 > -1 ? e.l2 : null}`
+        let ret = `${e.key}\t${String(e.v1).replace(/\t/g, '<TAB>')}\t${e.l1 > -1 ? e.l1 : null}\t${String(e.v2).replace(/\t/g, '<TAB>')}\t${e.l2 > -1 ? e.l2 : null}`
         if (options.out == null) {
             const isDifferentLine = e.l1 < 0 || e.l2 < 0 || e.l1 != e.l2;
             const isNullValue = e.v1 == null || e.v2 == null;
@@ -90,8 +90,8 @@ const header = [
     'entry',
     `value@${fnA.replace(/^.*(\/|\\)/, '')}`,
     `line@${fnA.replace(/^.*(\/|\\)/, '')}`,
-    `value@${fnA.replace(/^.*(\/|\\)/, '')}`,
-    `line@${fnA.replace(/^.*(\/|\\)/, '')}`
+    `value@${fnB.replace(/^.*(\/|\\)/, '')}`,
+    `line@${fnB.replace(/^.*(\/|\\)/, '')}`
 ].join('\t');
 
 if (options.out)
